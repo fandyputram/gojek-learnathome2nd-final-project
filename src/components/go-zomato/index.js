@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import styles from './styles.module.css';
+import { getCities, searchRestaurants } from './api';
 import { Button } from 'primereact/button';
 import { InputText } from 'primereact/inputtext';
 import 'primereact/resources/themes/saga-blue/theme.css';
@@ -7,7 +8,10 @@ import 'primereact/resources/primereact.min.css';
 import 'primeicons/primeicons.css';
 
 
-const yourApiCall = () => Promise.resolve('hello world!');
+const ApiCall = () => {
+
+
+};
 
 const Home = () => {
 
