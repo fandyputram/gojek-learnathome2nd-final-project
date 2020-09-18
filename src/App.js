@@ -1,8 +1,8 @@
 import React from 'react';
-import Instagram from './components/cheat-sheets/api-call';
+import Gozomato from './components/go-zomato';
 
 const App = () => {
-  return <Instagram />;
+  return <Gozomato />;
 };
 
 export default App;

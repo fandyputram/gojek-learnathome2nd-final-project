@@ -1,6 +1,8 @@
 import React, { useState, useEffect } from 'react';
 import styles from './styles.module.css';
 import { getCities, searchRestaurants } from './api';
+import { parseCitySuggestions, parseSearchRestaurants } from './utils';
+
 import { Button } from 'primereact/button';
 import { InputText } from 'primereact/inputtext';
 import 'primereact/resources/themes/saga-blue/theme.css';
@@ -41,8 +43,8 @@ const Home = () => {
             alt="Go-Zomato logo"
           />
           <div className={styles.countsRow}>
-            <InputText placeholder="Current city"/>
-            <Button label="Change City" className="p-button-success"/>
+            <InputText id="city" placeholder="Current city"/>
+            <Button label="Change City" onClick={ApiCall(document.getElementById("city").value)}/>
           </div>
         </div>
         <div></div>
