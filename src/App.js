@@ -1,5 +1,5 @@
 import React from 'react';
-import Gozomato from './components/go-zomato';
+import Gozomato from './components';
 
 const App = () => {
   return <Gozomato />;
