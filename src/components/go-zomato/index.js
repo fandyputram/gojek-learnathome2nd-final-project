@@ -8,9 +8,25 @@ import 'primereact/resources/primereact.min.css';
 import 'primeicons/primeicons.css';
 
 
-const ApiCall = () => {
+const ApiCall = (cityQuery) => {
+  const [citySuggestions, setCitySuggestions] = useState([]);
+  const [restaurants, setRestaurants] = useState([]);
 
+  useEffect(() => {
+    const searchRestaurantsFromCity = async () => {
+      const cities = parseCitySuggestions(await getCities(cityQuery));
+      setCitySuggestions(cities);
 
+      if (cities.length > 0) {
+        const restaurants = parseSearchRestaurants(
+          await searchRestaurants(cities[0].id)
+        );
+        setRestaurants(restaurants);
+      }
+    };
+
+    searchRestaurantsFromCity();
+  }, []);
 };
 
 const Home = () => {
